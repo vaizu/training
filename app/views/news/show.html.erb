@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="m-5">
+  <div class="row mt-5 pt-5">
+    <div class="col-12">
+      <h1 class="text-center mb-0">NEWS</h1>
+      <p class="text-center">Kotoha&Hanon</p>
+    </div>
+  </div>
+  <div class="row mt-5 pt-5">
+    <%= @news.created_at %>{NEWS}
+  </div>
+  <div class="row m-4">
+    <h1><%= @news.title %></h1>
+  </div>
+  <hr class="style6">
+  <div class="row m-4 mb-5">
+    <p><%= @news.body %></p>
+  </div>
+  <hr class="style6">
+  <div class="row">
+    <h5 class="col-12 text-center mt-5 pt-5 mb-5 pb-5">
+      <%= link_to "←　BACK", "/news", class: 'text-dark' %>
+    </h5>
+  </div>
+</div>
+</div>
