@@ -71,7 +71,7 @@
     <div class="col-6 text-center card mx-auto p-0 shadow-lg">
       <%= image_tag 'img_main.jpg',class:"img1" %>
     </div>
-    <div class="col-3 d-flex align-items-center">
+    <div class="col-3 d-flex align-items-center pl-5">
       <p>RELEASE ALL</p>
     </div>
   </div>
@@ -79,10 +79,36 @@
   <div class="row pt-5 mt-5">
     <h1>NEWS</h1>
   </div>
+  <div class = "row text-center">
+    <% @news.each.with_index(3) do |news| %>
+      <div class="col-lg-4">
+        <p>
+          <%= link_to news_path(news.id)  do %>
 
-  <div class="row pt-5 mt-5">
-    <h1>NEWS</h1>
-    <div></div>
+
+
+              <hr class="style6">
+
+            <div class="row">
+              <div class="m-5">
+              <%= news.title %>
+              </div>
+            </div>
+          <% end %>
+        </p>
+      </div>
+    <% end %>
   </div>
+  <div class="row mt-5 mb-5">
+    <div class="col-12">
+      <p class="text-right">
+        <%= link_to "NEWS ALL>", '/news' %>
+      </p>
+  </div>
+  </div>
+</div>
+  </div>
+
+
 
 </div>

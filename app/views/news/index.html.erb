@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="m-5">
+    <div class="row mt-5 pt-5">
+      <div class="col-12">
+        <h1 class="text-center mb-0">NEWS</h1>
+        <p class="text-center">Kotoha&Hanon</p>
+      </div>
+    </div>
+    <hr class="style6">
+    <% @news_list.each do |news| %>
+      <%= link_to news_path(news.id) do %>
+        <div class="row m-3">
+          <div class="col-2">
+            <%= news.created_at %>
+          </div>
+          <div class="col-8">
+            <%= news.title %>
+          </div>
+          <div class="col-2">
+            {NEWS}
+          </div>
+        </div>
+        <hr class="style6">
+      <% end %>
+    <% end %>
+  </div>
+</div>
