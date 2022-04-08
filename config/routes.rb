@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   root to: "homes#top"
 
   resources :news, only: [:new,:show,:create,:edit,:update,:index,:destroy]
+  
+  get '/profile', to: 'homes#profile'
 end
