@@ -84,15 +84,12 @@
       <div class="col-lg-4">
         <p>
           <%= link_to news_path(news.id)  do %>
-
-
-
-              <hr class="style6">
-
-            <div class="row">
-              <div class="m-5">
+            <hr class="style6">
+            <div class="row ml-3">
+              <%= news.created_at %>
+            </div>
+            <div class="row m-3">
               <%= news.title %>
-              </div>
             </div>
           <% end %>
         </p>

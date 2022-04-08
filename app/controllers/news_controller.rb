@@ -37,7 +37,7 @@ class NewsController < ApplicationController
   def destroy
     @news = News.find(params[:id])
     @news.destroy
-    redirect_to news_path
+    redirect_to "/news"
   end
 
 

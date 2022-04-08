@@ -6,6 +6,9 @@
       <p class="text-center">Kotoha&Hanon</p>
     </div>
   </div>
+  <div class="row">
+    <%= link_to "削除", news_path(@news), method: :delete %>
+  </div>
   <div class="row mt-5 pt-5">
     <%= @news.created_at %>{NEWS}
   </div>
@@ -14,7 +17,9 @@
   </div>
   <hr class="style6">
   <div class="row m-4 mb-5">
-    <p><%= @news.body %></p>
+    <p>
+      <%=safe_join(@news.body.split("\n"),tag(:br))%>
+    </p>
   </div>
   <hr class="style6">
   <div class="row">
