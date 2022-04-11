@@ -1,7 +1,35 @@
+<div class="container">
+  <div class="m-5">
+  <div class="row mt-5 pt-5">
+    <div class="col-12">
+      <h1 class="text-center mb-0">RELEASE</h1>
+      <p class="text-center">Kotoha&Hanon</p>
+    </div>
+  </div>
 <div class="recipe-post">
   <%= form_with(model: @release, url: releases_path, local: true) do |f| %>
 
     <div class="recipe-ingredients">
+      <div class="row">
+        <%= f.label :投稿画像, class: "col-sm-2 light" %>
+            <%= f.file_field :release_image, accept: "image/*" %>
+      </div>
+      <div class="row">
+        <%= f.label :サブタイトル, class: "col-sm-2 light" %>
+        <%= f.text_field :sub_title, placeholder: "サブタイトル", class: "col-sm-6 p-1" %>
+      </div>
+      <div class="row">
+        <%= f.label :メインタイトル, class: "col-sm-2 light" %>
+        <%= f.text_field :main_title, placeholder: "メインタイトル", class: "col-sm-6 p-1" %>
+      </div>
+      <div class="row">
+        <%= f.label :リリース日, class: "col-sm-2 light" %>
+        <%= f.text_field :release_day, placeholder: "リリース日", class: "col-sm-6 p-1" %>
+      </div>
+      <div class="row">
+        <%= f.label :詳細, class: "col-sm-2 light" %>
+        <%= f.text_field :detail, placeholder: "詳細", class: "col-sm-6 p-1" %>
+      </div>
       <div class="mx-auto">
         <%= f.fields_for :musics do |t| %>
           <%= render "releases/music_fields", f: t %>
@@ -15,10 +43,13 @@
         class: "btn btn-secondary btn-block",
         data: {
         association_insertion_node: '#detail-association-insertion-point',
-        association_insertion_method: 'after'
+        association_insertion_method: 'before'
         }%>
       </div>
     </div>
-
+    <div class="row text-center">
+      <%= f.submit "投稿", class: "btn btn-success col-sm-2" %>
+    </div>
   <% end %>
+</div>
 </div>

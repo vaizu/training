@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="m-5">
+  <div class="row mt-5 pt-5">
+    <div class="col-12">
+      <h1 class="text-center mb-0">RELEASE</h1>
+      <p class="text-center">Kotoha&Hanon</p>
+    </div>
+  </div>
+  <div class="row mt-5 pt-5">
+    <div class="col-6">
+    <%= image_tag @release.release_image, class: "img1" %>
+    </div>
+    <div class="col-6">
+      <div class="row">
+        <%= @release.sub_title %>
+      </div>
+      <h2 class="row">
+        <%= @release.main_title %>
+      </h2>
+      <div class="row">
+        <%= @release.release_day %>
+      </div>
+      <div class="row">
+        <%= @release.detail %>
+      </div>
+      <% @release.musics.each do |music| %>
+        <div class="row">
+          <h1 class="col-1">
+            <%= @sum += 1 %>
+          </h1>
+          <h3 class="col-6 mt-2">
+            <%= music.music_title %>
+          </h3>
+        </div>
+        <div class="row mt-2">
+          <div class="col-1"></div>
+          <div class="col-4">
+          作詞<%= music.lyrics %>
+          </div>
+          <div class="col-4">
+          作曲<%= music.composition %>
+          </div>
+          <div class="col-3"></div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
