@@ -7,22 +7,23 @@
     </div>
   </div>
   <div class="row mt-5 pt-5">
-    <div class="col-6">
-    <%= image_tag @release.release_image, class: "img1" %>
+    <div class="col-6 pr-5">
+    <%= image_tag @release.release_image, class: "img1" if @release.release_image .present? %>
     </div>
-    <div class="col-6">
+    <div class="col-6 pl-5">
       <div class="row">
         <%= @release.sub_title %>
       </div>
-      <h2 class="row">
+      <h2 class="row mt-3">
         <%= @release.main_title %>
       </h2>
-      <div class="row">
+      <div class="row mt-3">
         <%= @release.release_day %>
       </div>
       <div class="row">
         <%= @release.detail %>
       </div>
+      <div class="mt-3">
       <% @release.musics.each do |music| %>
         <div class="row">
           <h1 class="col-1">
@@ -32,17 +33,29 @@
             <%= music.music_title %>
           </h3>
         </div>
-        <div class="row mt-2">
+        <div class="row">
           <div class="col-1"></div>
-          <div class="col-4">
+          <div class="col-5">
           作詞<%= music.lyrics %>
           </div>
-          <div class="col-4">
+          <div class="col-5">
           作曲<%= music.composition %>
           </div>
-          <div class="col-3"></div>
+          <div class="col-1"></div>
         </div>
       <% end %>
+      </div>
     </div>
+  </div>
+  <div class="row">
+    <%= link_to "編集", edit_release_path(@release) %>
+  </div>
+  <div class="row">
+    <%= link_to "削除", release_path(@release), method: :delete %>
+  </div>
+  <div class="row">
+    <h5 class="col-12 text-center mt-5 pt-5 mb-5 pb-5">
+      <%= link_to "←　BACK", "/releases", class: 'text-dark' %>
+    </h5>
   </div>
 </div>

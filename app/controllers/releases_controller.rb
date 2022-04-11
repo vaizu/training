@@ -15,8 +15,31 @@ class ReleasesController < ApplicationController
 
   def show
     @release = Release.find(params[:id])
-
     @sum = 0
+  end
+
+  def edit
+    @release = Release.find(params[:id])
+  end
+
+  def update
+    @release = Release.find(params[:id])
+    if @release.update(release_params)
+      redirect_to release_path(@release)
+    else
+      render :edit
+    end
+  end
+
+  def index
+    @release = Release.new
+    @releases = Release.all
+  end
+
+  def destroy
+    @release = Release.find(params[:id])
+    @release.destroy
+    redirect_to "/releases"
   end
 
   private
