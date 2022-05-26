@@ -10,7 +10,7 @@
     <%= link_to "削除", news_path(@news), method: :delete %>
   </div>
   <div class="row mt-5 pt-5">
-    <%= @news.created_at %>{NEWS}
+    <%= @news.created_at.strftime('%Y/%m/%d') %>{NEWS}
   </div>
   <div class="row m-4">
     <h1><%= @news.title %></h1>
